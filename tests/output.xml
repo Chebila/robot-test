@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.12.5 on win32)" generated="2024-08-16T14:40:55.463523" rpa="false" schemaversion="5">
+<suite id="s1" name="Test-Api-Get" source="C:\Users\CASA ODC\Downloads\automated_test\robot-framework-labs\api\tests\test-api-get.robot">
+<test id="s1-t1" name="Fetch Jobs Using RequestsLibrary" line="10">
+<kw name="Create Headers">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-08-16T14:40:55.695960" level="INFO">${headers} = {'x-rapidapi-key': '5c720bcc03msh2f994d1ed852901p174fc2jsncbfc31cdba11', 'x-rapidapi-host': 'job-search15.p.rapidapi.com', 'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>x-rapidapi-key=${API_KEY}</arg>
+<arg>x-rapidapi-host=${API_HOST}</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-08-16T14:40:55.695960" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${headers}</value>
+<status status="PASS" start="2024-08-16T14:40:55.695960" elapsed="0.000000"/>
+</return>
+<msg time="2024-08-16T14:40:55.695960" level="INFO">${headers} = {'x-rapidapi-key': '5c720bcc03msh2f994d1ed852901p174fc2jsncbfc31cdba11', 'x-rapidapi-host': 'job-search15.p.rapidapi.com', 'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<status status="PASS" start="2024-08-16T14:40:55.695960" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-08-16T14:40:55.695960" level="INFO">${data} = {'api_type': 'fetch_jobs', 'search_terms': 'marketing', 'location': 'Chicago, IL', 'page': '1'}</msg>
+<var>${data}</var>
+<arg>api_type=fetch_jobs</arg>
+<arg>search_terms=marketing</arg>
+<arg>location=Chicago, IL</arg>
+<arg>page=1</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-08-16T14:40:55.695960" elapsed="0.000000"/>
+</kw>
+<kw name="POST" owner="RequestsLibrary">
+<msg time="2024-08-16T14:40:59.851915" level="INFO">POST Request : url=https://job-search15.p.rapidapi.com/ 
+ path_url=/ 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'x-rapidapi-key': '5c720bcc03msh2f994d1ed852901p174fc2jsncbfc31cdba11', 'x-rapidapi-host': 'job-search15.p.rapidapi.com', 'Content-Type': 'application/json', 'Content-Length': '95'} 
+ body=b'{"api_type": "fetch_jobs", "search_terms": "marketing", "location": "Chicago, IL", "page": "1"}' 
+ </msg>
+<msg time="2024-08-16T14:40:59.851915" level="INFO">POST Response : url=https://job-search15.p.rapidapi.com/ 
+ status=200, reason=OK 
+ headers={'Date': 'Fri, 16 Aug 2024 13:41:00 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Content-Length': '5474', 'Connection': 'keep-alive', 'Function-Execution-Id': 'm92lx85nm86x', 'X-Cloud-Trace-Context': '3203ee873a81a1de1011ddccbad8c501;o=1', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000', 'X-RateLimit-Requests-Limit': '50', 'X-RateLimit-Requests-Remaining': '45', 'X-RateLimit-Requests-Reset': '2678064', 'X-RateLimit-rapid-free-plans-hard-limit-Limit': '500000', 'X-RateLimit-rapid-free-plans-hard-limit-Remaining': '499995', 'X-RateLimit-rapid-free-plans-hard-limit-Reset': '2678064', 'Server': 'RapidAPI-1.2.8', 'X-RapidAPI-Version': '1.2.8', 'X-RapidAPI-Region': 'AWS - eu-west-1', 'X-RapidAPI-Request-Id': '866a6bdb3198fa6ef257a0f043fd5b31637f5c41a369f8357ffd89758ab83256'} 
+ body=[{"job_url": "https://www.linkedin.com/jobs/view/supervisor-brand-communications-at-mcdonald-s-3992217584", "company_name": "Mcdonald's corporation", "posted_date": "2024-08-05", "job_id": "cgI7vE7LQYfdlgYLQinsxhxL5ldGpqzdUPJEjFyNLJ/2MhGqH6IRZm7N8sxbIVDRyZ7BNxrVwj8JRxFh5xwgjwCaYYqYbH+ylqQKEBt7Fhneuuh95Fh6eu/XIA==*7mBsGlswbXAp7cqdLr4t7A==*T0a9sPDX+X9jhYK+BDZLIQ==*TtC928xiW9L4lqm7Ps5Lpg==", "location": "Chicago, IL", "snippet": "", "job_title": "Supervisor, Brand Communications", "linkedin_company_profile_url": "https://www.linkedin.com/company/mcdonald's-corporation"}, {"job_url": "https://www.linkedin.com/jobs/view/assistant-brand-manager-at-shan-foods-private-limited-3994156185", "company_name": "Shan foods private limited", "posted_date": "2024-08-07", "job_id": "3cK8xTzIr3YHNHvwnJdh3hvjPoaUP8nRnHtfjViVOQzdHoOqck8oNyKQvXVm/Qps/L+b6COmgF9gxxiS7eyvvlq/+2iuYWVhBh3ZPvJQ2mNvuUUBLrBXbAOT5HMldeVpNS3+*utQ/xXqalbr1a06m7A6DAg==*0zn+9Xo+nZdRU8sgJ6ceZw==*N8BFqTRyiud4i/+pVxDXSw==", "location": "Chicago, IL", "snippet": "", "job_title": "Assistant Brand Manager", "linkedin_company_profile_url": "https://pk.linkedin.com/company/shan-foods-private-limited"}, {"job_url": "https://www.linkedin.com/jobs/view/marketing-director-activation-at-no7-beauty-company-3995409934", "company_name": "No7beautycompany", "posted_date": "2024-08-09", "job_id": "M7OcA0M401fKN5DFZol0L1hPjr+2nwyIFKMawqsQiHzwTlsbVmyFr90Sd758PI8CpAytdu8ncAJO2kD6p8Tu6O57l9NgvM/LJCXyNDsSqmMJUYgFj2ZA/JcCl8Z2vFMYnA==*o6RrcaGNnR1i8jR/P1k8Gg==*d18LEtaChEjKmD3HZkehAA==*mVKUabHf79TibDCzn8Nhsw==", "location": "Chicago, IL", "snippet": "", "job_title": "Marketing Director (Activation)", "linkedin_company_profile_url": "https://uk.linkedin.com/company/no7beautycompany"}, {"job_url": "https://www.linkedin.com/jobs/view/marketing-coordinator-at-oro-chocolate-3978112574", "company_name": "Oro chocolate", "posted_date": "2024-07-18", "job_id": "zLF28M2QWQtY3lsH/0D+vF+5PgX21COCFYmhjPrv0y1QG0AyHVZfRLI/DVIThJY8XaAepPCxGKuDAbejsGIiY53TENzrxYNQMgIBcT7+nwqcD1FR*fXy+wu3bVY5fIBHgPxBJzA==*GsZpQ19LflcE7B6FnXeJuQ==*7jIGEmpcBp8WA/eU6ExIvg==", "location": "Chicago, IL", "snippet": "", "job_title": "Marketing Coordinator", "linkedin_company_profile_url": "https://www.linkedin.com/company/oro-chocolate"}, {"job_url": "https://www.linkedin.com/jobs/view/associate-creative-strategist-us-cpg-at-pinterest-3991923369", "company_name": "Pinterest", "posted_date": "2024-08-03", "job_id": "M5eps90WIh3fi5gFtefEWQ1XmF9hRoX+7X28KATsyQ/o+HhmfLufF2Y45uYx/1J7r8dK9tKBq46111mMDHC9ZooBi1kSRdhZnVdb0I+Cvaox/dYm5Qc9/tDojvgmvbs=*lUdU+KIizdaW28tq33Ldbg==*GUMVrJSI7nIkWT1bvWf8og==*oOHbVOnIIbmpIFJFqFLWMw==", "location": "Chicago, IL", "snippet": "", "job_title": "Associate Creative Strategist, US CPG", "linkedin_company_profile_url": "https://www.linkedin.com/company/pinterest"}, {"job_url": "https://www.linkedin.com/jobs/view/digital-marketing-apprenticeship-january-2025-start-at-google-3991693371", "company_name": "Google", "posted_date": "2024-08-05", "job_id": "BTI6zpBxtem7vCCMuyc+zoVVtUVICPBQi0DeaziNPzDeiGpRL9TyqPg3Xt3tOGzotX3xf8XY3Fo4QBU/y2CWYU9xatEmQ9PxlmcYugQScvSDZ9VkZOdWaNQa1Ei6vAbaTJwjLAa8QRwreTg=*2/B/30SkmNhczjeLmwV6lg==*PL5XdE8Jdfwn05v9ez0OzQ==*fXk50BeWBLfb+kvrYl41/A==", "location": "Chicago, IL", "snippet": "", "job_title": "Digital Marketing Apprenticeship, January 2025 Start", "linkedin_company_profile_url": "https://www.linkedin.com/company/google"}, {"job_url": "https://www.linkedin.com/jobs/view/marketing-analyst-remote-at-infuse-3934854486", "company_name": "Infusemedia", "posted_date": "2024-05-30", "job_id": "v6Pl2DS+uUTV+35F2eYVpKDYWHBXcCENGl7l2D2e8+2pzAZDezrdQPX+uOzM7IoX2n41EcmgSsCxRU3+/dOucdu1ZX6F6uWphMjEkDaMBQE=*Bt8qa6GB91ueq5HSUrHo5Q==*tjvckzi/ZWYgNoeowyxobg==*DG/f0iz1AFBY/VJVS9SW8w==", "location": "Chicago, IL", "snippet": "", "job_title": "Marketing Analyst (Remote)", "linkedin_company_profile_url": "https://www.linkedin.com/company/infusemedia"}, {"job_url": "https://www.linkedin.com/jobs/view/marketing-coordinator-at-compass-3998509571", "company_name": "Compassinc", "posted_date": "2024-08-12", "job_id": "DM7PD/rl7gHTcms/q1HHo4huYBPKgj7Jy04t1C36/9rkYgz8+a28K2SgmnSZ9p+hbL6eKCV1sT+X9o4t1QOSmFO9h2A//g+HMeHtcGi+*qXWpyf+7A08D/Cd2kfz7OQ==*0xWQqHhqltoeuR/PD9OofQ==*DcD4OO45daY43SkmsOX0jg==", "location": "Chicago, IL", "snippet": "", "job_title": "Marketing Coordinator", "linkedin_company_profile_url": "https://www.linkedin.com/company/compassinc"}, {"job_url": "https://www.linkedin.com/jobs/view/junior-marketing-assistant-at-moon-moments-4000856298", "company_name": "Moon moments", "posted_date": "2024-08-13", "job_id": "v8SzV+xfZDwKd2SPsKx/K90XXPxAvLypXNtLXQTrMqwh+WrtLHrWcjYBeyLSKYeatBGtZJ18y6x2ZYiCKVxBFmxsy4TOR39upxozw6CdX4aa0y2+KKZ8PQ==*+eBiQAb2Wj+/vCgjd0HQJg==*xB6S6BcuOjPlB3F3SfxhgA==*VB+UvMQjebp7ZsIU4Mbg5A==", "location": "Chicago, IL", "snippet": "", "job_title": "Junior Marketing Assistant", "linkedin_company_profile_url": "https://uk.linkedin.com/company/moon-moments"}, {"job_url": "https://www.linkedin.com/jobs/view/social-strategist-at-pepsico-3998841101", "company_name": "Pepsico", "posted_date": "2024-08-13", "job_id": "4/Dk7BbGa0vJ5mDGIyEDZtaWsrY46BiPjJZMHjXyaZb0lpT6i1sH5JBI/TL/EPsaF51JRl1Un7cz8mnwl0kMR+9Ir7s8T4dXyzs=*0gv1N/ork7r8cvJLVVj/hA==*GxOSEDkQgdfqbJMzWcUlDw==*j/HDPO1LlKIABM/QcpGcDw==", "location": "Chicago, IL", "snippet": "", "job_title": "Social Strategist", "linkedin_company_profile_url": "https://www.linkedin.com/company/pepsico"}] 
+ </msg>
+<msg time="2024-08-16T14:40:59.851915" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>${BASE_URL}</arg>
+<arg>headers=${headers}</arg>
+<arg>json=${data}</arg>
+<doc>Sends a POST request.</doc>
+<status status="PASS" start="2024-08-16T14:40:55.695960" elapsed="4.155955"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-08-16T14:40:59.851915" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-08-16T14:40:59.851915" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-08-16T14:40:59.851915" level="INFO">Response Status Code: 200</msg>
+<arg>Response Status Code: ${response.status_code}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-08-16T14:40:59.851915" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-08-16T14:40:59.851915" level="INFO">Response Headers: {'Date': 'Fri, 16 Aug 2024 13:41:00 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Content-Length': '5474', 'Connection': 'keep-alive', 'Function-Execution-Id': 'm92lx85nm86x', 'X-Cloud-Trace-Context': '3203ee873a81a1de1011ddccbad8c501;o=1', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000', 'X-RateLimit-Requests-Limit': '50', 'X-RateLimit-Requests-Remaining': '45', 'X-RateLimit-Requests-Reset': '2678064', 'X-RateLimit-rapid-free-plans-hard-limit-Limit': '500000', 'X-RateLimit-rapid-free-plans-hard-limit-Remaining': '499995', 'X-RateLimit-rapid-free-plans-hard-limit-Reset': '2678064', 'Server': 'RapidAPI-1.2.8', 'X-RapidAPI-Version': '1.2.8', 'X-RapidAPI-Region': 'AWS - eu-west-1', 'X-RapidAPI-Request-Id': '866a6bdb3198fa6ef257a0f043fd5b31637f5c41a369f8357ffd89758ab83256'}</msg>
+<arg>Response Headers: ${response.headers}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-08-16T14:40:59.851915" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-08-16T14:40:59.851915" level="INFO">Response Body: [{'job_url': 'https://www.linkedin.com/jobs/view/supervisor-brand-communications-at-mcdonald-s-3992217584', 'company_name': "Mcdonald's corporation", 'posted_date': '2024-08-05', 'job_id': 'cgI7vE7LQYfdlgYLQinsxhxL5ldGpqzdUPJEjFyNLJ/2MhGqH6IRZm7N8sxbIVDRyZ7BNxrVwj8JRxFh5xwgjwCaYYqYbH+ylqQKEBt7Fhneuuh95Fh6eu/XIA==*7mBsGlswbXAp7cqdLr4t7A==*T0a9sPDX+X9jhYK+BDZLIQ==*TtC928xiW9L4lqm7Ps5Lpg==', 'location': 'Chicago, IL', 'snippet': '', 'job_title': 'Supervisor, Brand Communications', 'linkedin_company_profile_url': "https://www.linkedin.com/company/mcdonald's-corporation"}, {'job_url': 'https://www.linkedin.com/jobs/view/assistant-brand-manager-at-shan-foods-private-limited-3994156185', 'company_name': 'Shan foods private limited', 'posted_date': '2024-08-07', 'job_id': '3cK8xTzIr3YHNHvwnJdh3hvjPoaUP8nRnHtfjViVOQzdHoOqck8oNyKQvXVm/Qps/L+b6COmgF9gxxiS7eyvvlq/+2iuYWVhBh3ZPvJQ2mNvuUUBLrBXbAOT5HMldeVpNS3+*utQ/xXqalbr1a06m7A6DAg==*0zn+9Xo+nZdRU8sgJ6ceZw==*N8BFqTRyiud4i/+pVxDXSw==', 'location': 'Chicago, IL', 'snippet': '', 'job_title': 'Assistant Brand Manager', 'linkedin_company_profile_url': 'https://pk.linkedin.com/company/shan-foods-private-limited'}, {'job_url': 'https://www.linkedin.com/jobs/view/marketing-director-activation-at-no7-beauty-company-3995409934', 'company_name': 'No7beautycompany', 'posted_date': '2024-08-09', 'job_id': 'M7OcA0M401fKN5DFZol0L1hPjr+2nwyIFKMawqsQiHzwTlsbVmyFr90Sd758PI8CpAytdu8ncAJO2kD6p8Tu6O57l9NgvM/LJCXyNDsSqmMJUYgFj2ZA/JcCl8Z2vFMYnA==*o6RrcaGNnR1i8jR/P1k8Gg==*d18LEtaChEjKmD3HZkehAA==*mVKUabHf79TibDCzn8Nhsw==', 'location': 'Chicago, IL', 'snippet': '', 'job_title': 'Marketing Director (Activation)', 'linkedin_company_profile_url': 'https://uk.linkedin.com/company/no7beautycompany'}, {'job_url': 'https://www.linkedin.com/jobs/view/marketing-coordinator-at-oro-chocolate-3978112574', 'company_name': 'Oro chocolate', 'posted_date': '2024-07-18', 'job_id': 'zLF28M2QWQtY3lsH/0D+vF+5PgX21COCFYmhjPrv0y1QG0AyHVZfRLI/DVIThJY8XaAepPCxGKuDAbejsGIiY53TENzrxYNQMgIBcT7+nwqcD1FR*fXy+wu3bVY5fIBHgPxBJzA==*GsZpQ19LflcE7B6FnXeJuQ==*7jIGEmpcBp8WA/eU6ExIvg==', 'location': 'Chicago, IL', 'snippet': '', 'job_title': 'Marketing Coordinator', 'linkedin_company_profile_url': 'https://www.linkedin.com/company/oro-chocolate'}, {'job_url': 'https://www.linkedin.com/jobs/view/associate-creative-strategist-us-cpg-at-pinterest-3991923369', 'company_name': 'Pinterest', 'posted_date': '2024-08-03', 'job_id': 'M5eps90WIh3fi5gFtefEWQ1XmF9hRoX+7X28KATsyQ/o+HhmfLufF2Y45uYx/1J7r8dK9tKBq46111mMDHC9ZooBi1kSRdhZnVdb0I+Cvaox/dYm5Qc9/tDojvgmvbs=*lUdU+KIizdaW28tq33Ldbg==*GUMVrJSI7nIkWT1bvWf8og==*oOHbVOnIIbmpIFJFqFLWMw==', 'location': 'Chicago, IL', 'snippet': '', 'job_title': 'Associate Creative Strategist, US CPG', 'linkedin_company_profile_url': 'https://www.linkedin.com/company/pinterest'}, {'job_url': 'https://www.linkedin.com/jobs/view/digital-marketing-apprenticeship-january-2025-start-at-google-3991693371', 'company_name': 'Google', 'posted_date': '2024-08-05', 'job_id': 'BTI6zpBxtem7vCCMuyc+zoVVtUVICPBQi0DeaziNPzDeiGpRL9TyqPg3Xt3tOGzotX3xf8XY3Fo4QBU/y2CWYU9xatEmQ9PxlmcYugQScvSDZ9VkZOdWaNQa1Ei6vAbaTJwjLAa8QRwreTg=*2/B/30SkmNhczjeLmwV6lg==*PL5XdE8Jdfwn05v9ez0OzQ==*fXk50BeWBLfb+kvrYl41/A==', 'location': 'Chicago, IL', 'snippet': '', 'job_title': 'Digital Marketing Apprenticeship, January 2025 Start', 'linkedin_company_profile_url': 'https://www.linkedin.com/company/google'}, {'job_url': 'https://www.linkedin.com/jobs/view/marketing-analyst-remote-at-infuse-3934854486', 'company_name': 'Infusemedia', 'posted_date': '2024-05-30', 'job_id': 'v6Pl2DS+uUTV+35F2eYVpKDYWHBXcCENGl7l2D2e8+2pzAZDezrdQPX+uOzM7IoX2n41EcmgSsCxRU3+/dOucdu1ZX6F6uWphMjEkDaMBQE=*Bt8qa6GB91ueq5HSUrHo5Q==*tjvckzi/ZWYgNoeowyxobg==*DG/f0iz1AFBY/VJVS9SW8w==', 'location': 'Chicago, IL', 'snippet': '', 'job_title': 'Marketing Analyst (Remote)', 'linkedin_company_profile_url': 'https://www.linkedin.com/company/infusemedia'}, {'job_url': 'https://www.linkedin.com/jobs/view/marketing-coordinator-at-compass-3998509571', 'company_name': 'Compassinc', 'posted_date': '2024-08-12', 'job_id': 'DM7PD/rl7gHTcms/q1HHo4huYBPKgj7Jy04t1C36/9rkYgz8+a28K2SgmnSZ9p+hbL6eKCV1sT+X9o4t1QOSmFO9h2A//g+HMeHtcGi+*qXWpyf+7A08D/Cd2kfz7OQ==*0xWQqHhqltoeuR/PD9OofQ==*DcD4OO45daY43SkmsOX0jg==', 'location': 'Chicago, IL', 'snippet': '', 'job_title': 'Marketing Coordinator', 'linkedin_company_profile_url': 'https://www.linkedin.com/company/compassinc'}, {'job_url': 'https://www.linkedin.com/jobs/view/junior-marketing-assistant-at-moon-moments-4000856298', 'company_name': 'Moon moments', 'posted_date': '2024-08-13', 'job_id': 'v8SzV+xfZDwKd2SPsKx/K90XXPxAvLypXNtLXQTrMqwh+WrtLHrWcjYBeyLSKYeatBGtZJ18y6x2ZYiCKVxBFmxsy4TOR39upxozw6CdX4aa0y2+KKZ8PQ==*+eBiQAb2Wj+/vCgjd0HQJg==*xB6S6BcuOjPlB3F3SfxhgA==*VB+UvMQjebp7ZsIU4Mbg5A==', 'location': 'Chicago, IL', 'snippet': '', 'job_title': 'Junior Marketing Assistant', 'linkedin_company_profile_url': 'https://uk.linkedin.com/company/moon-moments'}, {'job_url': 'https://www.linkedin.com/jobs/view/social-strategist-at-pepsico-3998841101', 'company_name': 'Pepsico', 'posted_date': '2024-08-13', 'job_id': '4/Dk7BbGa0vJ5mDGIyEDZtaWsrY46BiPjJZMHjXyaZb0lpT6i1sH5JBI/TL/EPsaF51JRl1Un7cz8mnwl0kMR+9Ir7s8T4dXyzs=*0gv1N/ork7r8cvJLVVj/hA==*GxOSEDkQgdfqbJMzWcUlDw==*j/HDPO1LlKIABM/QcpGcDw==', 'location': 'Chicago, IL', 'snippet': '', 'job_title': 'Social Strategist', 'linkedin_company_profile_url': 'https://www.linkedin.com/company/pepsico'}]</msg>
+<arg>Response Body: ${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-08-16T14:40:59.851915" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-08-16T14:40:55.695960" elapsed="4.155955"/>
+</test>
+<status status="PASS" start="2024-08-16T14:40:55.463523" elapsed="4.388392"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test-Api-Get">Test-Api-Get</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-08-16T14:40:55.447894" level="WARN">Error in file 'C:\Users\CASA ODC\Downloads\automated_test\robot-framework-labs\api\tests\test-api-get.robot' on line 22: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+</errors>
+</robot>
